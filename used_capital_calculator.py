@@ -65,9 +65,11 @@ print('---------------\n')
 for coin in used_capital_by_coin:
     print(coin + ': ' + str(used_capital_by_coin[coin]))
 
-print('=================================\n')
+print('-------------------------------------\n')
 
 print('Capital by Bot')
 print('--------------\n')
 for bot in used_capital_by_bot:
     print(bot + ': ' + str(used_capital_by_bot[bot]))
+    
+print('-------------------------------------\n')
