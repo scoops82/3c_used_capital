@@ -33,13 +33,13 @@ used_capital_by_coin = {}
 used_capital_by_bot = {}
 
 def get_used_capital(deal):
-    bo = float(deal['base_order_volume'])
     so = float(deal['safety_order_volume'])
     mart_coeff = float(deal['martingale_volume_coefficient'])
     comp_so = int(deal['completed_safety_orders_count'])
     active_so = int(deal['current_active_safety_orders_count'])
+    res_capital = float(deal['reserved_base_coin'])
 
-    total = (bo + so) * mart_coeff ** ((comp_so - 1) + active_so)
+    total = res_capital + (so * (active_so * (mart_coeff ** comp_so)))
 
     return total
     
